@@ -6,7 +6,7 @@ defmodule TelemetryLab.Metrics.Instrumenter do
       [:grocery, :store, :sale]
     ]
 
-    :telemetry.attach_many("telemetry-intro-instrumenter", events, &__MODULE__.handle_event/4, nil)
+    :telemetry.attach_many("telemetry-lab-instrumenter", events, &__MODULE__.handle_event/4, nil)
   end
 
   def handle_event([:grocery, :store, :sale], measurements, metadata, _config) do
