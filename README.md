@@ -1,21 +1,26 @@
 # TelemetryLab
 
-**TODO: Add description**
+Simple elixir telemetry app.
 
-## Installation
+## Setup
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `telemetry_lab` to your list of dependencies in `mix.exs`:
+First, install the dependencies.
 
-```elixir
-def deps do
-  [
-    {:telemetry_lab, "~> 0.1.0"}
-  ]
-end
+```
+mix deps.get
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/telemetry_lab>.
+then run iex with mix.
 
+```
+iex -S mix
+```
+
+See the telemetry instrumenter/handler in action by calling a function that emit a telemetry event.
+
+```
+iex> TelemetryLab.Grocery.Store.sale("apple", 5, 10)
+
+[info] [Sale telemetry: 50] total for apple
+"Sold apple: 5 units at 10 each. Total 50"
+```
